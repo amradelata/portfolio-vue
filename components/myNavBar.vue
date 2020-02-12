@@ -12,7 +12,8 @@
           target="_blank"
           rel="noopener"
         ></a>
-        <a href="./blog.html" class="button downloadCvBtn radio">Blog</a>
+        <nuxt-link to="/admin" class="button downloadCvBtn radio">admin</nuxt-link>
+        <nuxt-link to="/posts" class="button downloadCvBtn radio">posts</nuxt-link>
         <a
           href="~/./assets/cv/Amr-adel-ata-frontEndCV.pdf"
           target="_blank"
@@ -34,7 +35,8 @@
         target="_blank"
         rel="noopener"
       ></a>
-      <a href="./blog.html" class="button downloadCvBtn radio">Blog</a>
+      <nuxt-link to="/posts" class="button downloadCvBtn radio">posts</nuxt-link>
+
       <a
         href="./assets/cv/Amr-adel-ata-frontEndCV.pdf"
         target="_blank"
