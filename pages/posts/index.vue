@@ -1,13 +1,13 @@
 <template>
   <div>
     <!--  -->
-    <div class="cards" v-for="product in posts" :key="product.id" cols="12" sm="4">
+    <div class="cards" v-for="post in posts" :key="post.id" cols="12" sm="4">
       <div class="card" outlined tile>
-        <nuxt-link :to="'posts/' + product.id">
-          <div class="img" :style="{ backgroundImage: 'url(' + product.img_url + ')' }"></div>
+        <nuxt-link :to="'posts/' + post.id">
+          <div class="img" :style="{ backgroundImage: 'url(' + post.img_url + ')' }"></div>
 
           <div class="content">
-            <h3 class="title">{{product.title}}</h3>
+            <h3 class="title">{{post.title}}</h3>
             <button>Shoew More</button>
           </div>
         </nuxt-link>

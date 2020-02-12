@@ -131,52 +131,6 @@ export default {
       const res = await axios.delete(API + "/" + index);
       const dele = await axios.get(API);
       this.posts = dele.data;
-    },
-    edit(index) {
-      console.log(this.$refs["input1"][index], index);
-      const input1 = this.$refs["input1"][index];
-      const input2 = this.$refs["input2"][index];
-      const input3 = this.$refs["input3"][index];
-      const edit = this.$refs["edit"][index];
-      const delet = this.$refs["delete"][index];
-      const save = this.$refs["save"][index];
-      // style
-      edit.style.display = "none";
-      delet.style.display = "none";
-      save.style.display = "inline-block";
-      input1.style.display = "inline-block";
-      input2.style.display = "inline-block";
-      input3.style.display = "inline-block";
-    },
-    async save(index) {
-      const input1 = this.$refs["input1"][index];
-      const input2 = this.$refs["input2"][index];
-      const input3 = this.$refs["input3"][index];
-      const span = this.$refs["span"][index].id;
-      // inputVale
-      const input1Value = this.$refs["input1"][index].value;
-      const input2Value = this.$refs["input2"][index].value;
-      const input3Value = this.$refs["input3"][index].value;
-
-      // inputVale
-      const edit = this.$refs["edit"][index];
-      const delet = this.$refs["delete"][index];
-      const save = this.$refs["save"][index];
-      // style
-      edit.style.display = "inline-block";
-      delet.style.display = "inline-block";
-      save.style.display = "none";
-      input1.style.display = "none";
-      input2.style.display = "none";
-      input3.style.display = "none";
-
-      const res = await axios.patch(API + "/" + span, {
-        title: input1Value,
-        img_url: input2Value,
-        body: input3Value
-      });
-      const edi = await axios.get(API);
-      this.API = edi.data;
     }
   },
   async created() {
