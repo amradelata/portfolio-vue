@@ -21,8 +21,13 @@
         >Download CV</a>
       </div>
     </nav>
-    <i class="fas fa-bars phonePars phoneParsNave" id="phoneParsNave"></i>
-    <a class="my-buttonsPhone">
+    <i
+      class="fas fa-bars phonePars phoneParsNave"
+      id="phoneParsNave"
+      ref="phoneParsNave"
+      @click="handler"
+    ></i>
+    <a class="my-buttonsPhone" ref="my-buttonsPhone">
       <a
         href="https://www.patreon.com/user?alert=2"
         class="patreon-button button radio downloadCvBtn"
@@ -41,7 +46,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    handler() {
+      this.$refs["my-buttonsPhone"].classList.toggle("disblay-block");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>

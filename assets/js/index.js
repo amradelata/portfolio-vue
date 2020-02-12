@@ -4,10 +4,10 @@ let phonePars = document.getElementById('phonePars')
 let topbtn = document.querySelector('.top-buttonphone')
 let navIcon = document.getElementById('phoneParsNave')
 let manMeue = document.querySelector('.my-buttonsPhone')
-navIcon.addEventListener('click', () => {
-  // console.log('click')
-  manMeue.classList.toggle('disblay-block')
-})
+// navIcon.addEventListener('click', () => {  
+//   // console.log('click')
+//   manMeue.classList.toggle('disblay-block')
+// })
 buttons.forEach(category =>
   category.addEventListener('click', function () {
     // document.querySelector('.top-button .active').classList.remove('active');
@@ -25,6 +25,35 @@ buttons.forEach(category =>
     })
   })
 )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 buttons.forEach(category =>
   category.addEventListener('click', function () {
     category.classList.add('active')
@@ -41,6 +70,7 @@ buttons.forEach(category =>
     })
   })
 )
+
 phonePars.addEventListener('click', () => {
   topbtn.style.display = 'block !important'
   topbtn.classList.toggle('heid')

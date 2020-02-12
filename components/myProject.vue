@@ -98,8 +98,8 @@
             More on Github
             <i class="fab fa-github"></i>
           </a>
-          <i class="fas fa-bars phonePars" id="phonePars"></i>
-          <div class="top-buttonphone">
+          <i class="fas fa-bars phonePars" id="phonePars" ref="phonePars" @click="projectpars"></i>
+          <div class="top-buttonphone" ref="top-buttonphone">
             <button id="all" class="active">All</button>
             <button id="front-end">Front-end</button>
             <button id="uiUx">Ui/Ux</button>
@@ -184,7 +184,27 @@
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    allCards() {
+      return document.querySelectorAll(".my-card");
+    },
+    buttons() {
+      return document.querySelectorAll(".button");
+    }
+  },
+  mounted() {
+    this.buttons.forEach((value, index) => {
+      // console.log(value, index);
+    });
+  },
+
+  methods: {
+    projectpars() {
+      this.$refs["top-buttonphone"].classList.toggle("heid");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
