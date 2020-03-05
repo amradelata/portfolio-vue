@@ -1,25 +1,38 @@
 <template>
   <div>
-    <!--  -->
-    <div class="cards" v-for="post in posts" :key="post.id" cols="12" sm="4">
-      <div class="card" outlined tile>
-        <nuxt-link :to="'posts/' + post.id">
-          <div class="img" :style="{ backgroundImage: 'url(' + post.img_url + ')' }"></div>
-
-          <div class="content">
-            <h3 class="title">{{post.title}}</h3>
-            <button>Shoew More</button>
+    <myNavBar />
+    <div class="container">
+      <div class="postes">
+        <div class="cards">
+          <div class="card" v-for="post in posts" :key="post.id">
+            <nuxt-link :to="'posts/' + post.id">
+              <div>
+                <!-- <div class="img" :style="{ backgroundImage: 'url(' + single.img_url + ')' }"></div> -->
+                <div class="img" :style="{backgroundImage: 'url('+ post.img_url+')'}"></div>
+                <div class="content">
+                  <h3>{{post.title}}</h3>
+                  <p>{{post.body.slice(0, 50)+ " ..." }}</p>
+                </div>
+              </div>
+            </nuxt-link>
           </div>
-        </nuxt-link>
+        </div>
       </div>
     </div>
+    <myFooter />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-const API = "http://localhost:3000/posts";
+const API = "http://localhost:4000/posts";
+import myNavBar from "~/components/myNavBar.vue";
+import myFooter from "~/components/myFooter.vue";
 export default {
+  components: {
+    myNavBar,
+    myFooter
+  },
   data() {
     return {
       posts: []
@@ -34,39 +47,37 @@ export default {
 </script>
 
 <style  scoped>
-.cards {
-  display: flex;
-  flex-wrap: wrap;
+h1 {
+  font-size: 30px;
 }
+
+.postes {
+  padding-top: 150px;
+  display: inline-flex;
+}
+
 .card {
   flex-basis: calc(33.333% - 20px);
-  display: inline-block;
-  background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   margin: 10px;
-  border-radius: 4px;
-  overflow: hidden;
+  cursor: pointer;
 }
 .card .img {
-  width: 100%;
-  background-size: contain;
+  border-radius: 0;
+  background-size: cover;
 }
 .card .content {
-  padding: 15px;
+  text-align: left;
+  padding: 25px;
 }
 .card .content h3 {
-  margin: 0;
-  font-size: 25px;
-  margin-bottom: 10px;
+  font-weight: lighter;
+  font-size: 30px;
 }
-.card .content button {
-  padding: 10px 15px;
-  background-color: #3498db;
-  color: #fff;
-  border-color: transparent;
-  display: block;
-  text-align: center;
-  border-radius: 3px;
-  width: 100%;
+.card .content p {
+  font-weight: lighter;
+  font-size: 20px;
 }
 </style>
+
+
+

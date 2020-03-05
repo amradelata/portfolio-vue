@@ -1,8 +1,9 @@
 <template>
   <div>
     <nav class="container">
-      <img src="~/assets/img/logos/logo_transparent.png" alt="logo" class="logo" />
-
+      <nuxt-link to="/">
+        <img src="~/assets/img/logos/logo_transparent.png" alt="logo" class="logo" />
+      </nuxt-link>
       <!-- <i class="fas fa-bars phonePars phoneParsNave" id="phoneParsNave"></i> -->
 
       <div class="my-buttons">

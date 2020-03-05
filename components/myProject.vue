@@ -9,8 +9,8 @@
       <div class="towTaps">
         <div class="tapyalow">
           <div class="top-button">
-            <button id="all" class="active">All</button>
-            <button id="front-end">Front-end</button>
+            <button id="all" class="active" @click="getAll">All</button>
+            <button id="front-end" @click="getFrountEnd">Front-end</button>
             <button id="uiUx">UI/UX</button>
             <button id="practicing">Practicing</button>
           </div>
@@ -22,7 +22,11 @@
           </a>
           <div class="all">
             <div class="cards">
-              <div class="my-card" data-name="front-end">
+              <div v-for="item in myProjects" :key="item.id" class="my-card">
+                <div class="img" :style="{ backgroundImage: 'url(' + item.img_url + ')' }"></div>
+                {{ item.title }}
+              </div>
+              <!-- <div class="my-card" data-name="front-end">
                 <div class="img frontend1"></div>
                 <p class="is-size-5">E-commerce Vue,VueX,Nuxt</p>
               </div>
@@ -38,11 +42,11 @@
                 <div class="img frontend4"></div>
                 <p class="is-size-5">Egypt Cities</p>
               </div>
-              <div class="my-card" data-name="front-end">
+              <div class="my-card" data-name="front-end" ref="cards">
                 <div class="img frontend5"></div>
                 <p class="is-size-5">E-commerce Vue Firebase</p>
               </div>
-              <div class="my-card" data-name="uiUx">
+              <div class="my-card" data-name="uiUx" ref="cards">
                 <div class="img uiUx1"></div>
                 <p class="is-size-5">Profile</p>
               </div>
@@ -85,7 +89,7 @@
               <div class="my-card" data-name="practicing">
                 <div class="img practic1"></div>
                 <p class="is-size-5">Full-CRUD-ajax</p>
-              </div>
+              </div>-->
             </div>
           </div>
         </div>
@@ -184,7 +188,12 @@
 </template>
 
 <script>
+import axios from "axios";
+const APImyProjects = "http://localhost:4000/posts";
 export default {
+  data() {
+    return { myProjects: [] };
+  },
   computed: {
     allCards() {
       return document.querySelectorAll(".my-card");
@@ -198,11 +207,22 @@ export default {
       // console.log(value, index);
     });
   },
-
   methods: {
     projectpars() {
       this.$refs["top-buttonphone"].classList.toggle("heid");
+    },
+    async getAll() {
+      const res = await axios.get(APImyProjects);
+      this.myProjects = res.data;
+    },
+    async getFrountEnd() {
+      const res = await axios.get(APImyProjects + "/?id=2");
+      this.myProjects = res.data;
     }
+  },
+  async created() {
+    const res = await axios.get(APImyProjects);
+    this.myProjects = res.data;
   }
 };
 </script>
