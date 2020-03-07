@@ -7,20 +7,21 @@
       <!-- <i class="fas fa-bars phonePars phoneParsNave" id="phoneParsNave"></i> -->
 
       <div class="my-buttons">
-        <a
-          href="https://www.patreon.com/user?alert=2"
-          class="patreon-button button radio downloadCvBtn"
-          target="_blank"
-          rel="noopener"
-        ></a>
-        <nuxt-link to="/admin" class="button downloadCvBtn radio">admin</nuxt-link>
-        <nuxt-link to="/posts" class="button downloadCvBtn radio">posts</nuxt-link>
+        <nuxt-link to="/posts" class="button radio downloadCvBtn">My Blog</nuxt-link>
+
+        <!-- href="https://drive.google.com/open?id=1PKZ9yZvnuVU_cok9enCibwViG5ZrfqvB" -->
         <a
           href="~/./assets/cv/Amr-adel-ata-frontEndCV.pdf"
           target="_blank"
-          download
           class="button downloadCvBtn radio"
         >Download CV</a>
+        <a
+          href="https://www.patreon.com/user?alert=2"
+          class="patreon-button button radio"
+          target="_blank"
+          rel="noopener"
+        ></a>
+        <!-- <nuxt-link to="/admin" class="button downloadCvBtn radio">admin</nuxt-link> -->
       </div>
     </nav>
     <i
@@ -30,13 +31,7 @@
       @click="handler"
     ></i>
     <a class="my-buttonsPhone" ref="my-buttonsPhone">
-      <a
-        href="https://www.patreon.com/user?alert=2"
-        class="patreon-button button radio downloadCvBtn"
-        target="_blank"
-        rel="noopener"
-      ></a>
-      <nuxt-link to="/posts" class="button downloadCvBtn radio">posts</nuxt-link>
+      <nuxt-link to="/posts" class="button radio downloadCvBtn">My Blog</nuxt-link>
 
       <a
         href="./assets/cv/Amr-adel-ata-frontEndCV.pdf"
@@ -44,6 +39,12 @@
         download
         class="button downloadCvBtn radio"
       >Download CV</a>
+      <a
+        href="https://www.patreon.com/user?alert=2"
+        class="patreon-button button radio"
+        target="_blank"
+        rel="noopener"
+      ></a>
     </a>
   </div>
 </template>

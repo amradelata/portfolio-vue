@@ -11,8 +11,8 @@
           <div class="top-button">
             <button id="all" class="active" @click="getAll">All</button>
             <button id="front-end" @click="getFrountEnd">Front-end</button>
-            <button id="uiUx">UI/UX</button>
-            <button id="practicing">Practicing</button>
+            <button id="uiUx" @click="uiUx">UI/UX</button>
+            <button id="practicing" @click="practicing">Practicing</button>
           </div>
         </div>
         <div class="tapGray">
@@ -23,73 +23,9 @@
           <div class="all">
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
-                <div class="img" :style="{ backgroundImage: 'url(' + item.img_url + ')' }"></div>
-                {{ item.title }}
+                <div class="img" :style="{ backgroundImage: 'url(' + item.projectsImg + ')' }"></div>
+                <p class="is-size-5">{{ item.projectsName }}</p>
               </div>
-              <!-- <div class="my-card" data-name="front-end">
-                <div class="img frontend1"></div>
-                <p class="is-size-5">E-commerce Vue,VueX,Nuxt</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend2"></div>
-                <p class="is-size-5">Spacex Api</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend3"></div>
-                <p class="is-size-5">Movie Cinema</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend4"></div>
-                <p class="is-size-5">Egypt Cities</p>
-              </div>
-              <div class="my-card" data-name="front-end" ref="cards">
-                <div class="img frontend5"></div>
-                <p class="is-size-5">E-commerce Vue Firebase</p>
-              </div>
-              <div class="my-card" data-name="uiUx" ref="cards">
-                <div class="img uiUx1"></div>
-                <p class="is-size-5">Profile</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx2"></div>
-                <p class="is-size-5">Responsive</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx3"></div>
-                <p class="is-size-5">Starnight</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx4"></div>
-                <p class="is-size-5">3kod</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx5"></div>
-                <p class="is-size-5">Eclipse</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx6"></div>
-                <p class="is-size-5">Colingz</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx7"></div>
-                <p class="is-size-5">Acosta</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx8"></div>
-                <p class="is-size-5">Dron</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx9"></div>
-                <p class="is-size-5">Counsel</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx10"></div>
-                <p class="is-size-5">STARTUPLY</p>
-              </div>
-              <div class="my-card" data-name="practicing">
-                <div class="img practic1"></div>
-                <p class="is-size-5">Full-CRUD-ajax</p>
-              </div>-->
             </div>
           </div>
         </div>
@@ -104,76 +40,16 @@
           </a>
           <i class="fas fa-bars phonePars" id="phonePars" ref="phonePars" @click="projectpars"></i>
           <div class="top-buttonphone" ref="top-buttonphone">
-            <button id="all" class="active">All</button>
-            <button id="front-end">Front-end</button>
-            <button id="uiUx">Ui/Ux</button>
-            <button id="practicing">Practicing</button>
+            <button id="all" class="active" @click="getAll">All</button>
+            <button id="front-end" @click="getFrountEnd">Front-end</button>
+            <button id="uiUx" @click="uiUx">Ui/Ux</button>
+            <button id="practicing" @click="practicing">Practicing</button>
           </div>
           <div class="all">
             <div class="cards">
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend1"></div>
-                <p class="is-size-5">E-commerce Vue,VueX,Nuxt</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend2"></div>
-                <p class="is-size-5">Spacex Api</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend3"></div>
-                <p class="is-size-5">Movie Cinema</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend4"></div>
-                <p class="is-size-5">Egypt Cities</p>
-              </div>
-              <div class="my-card" data-name="front-end">
-                <div class="img frontend5"></div>
-                <p class="is-size-5">E-commerce Vue Firebase</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx1"></div>
-                <p class="is-size-5">Profile</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx2"></div>
-                <p class="is-size-5">Responsive</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx3"></div>
-                <p class="is-size-5">Starnight</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx4"></div>
-                <p class="is-size-5">3kod</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx5"></div>
-                <p class="is-size-5">Eclipse</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx6"></div>
-                <p class="is-size-5">Colingz</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx7"></div>
-                <p class="is-size-5">Acosta</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx8"></div>
-                <p class="is-size-5">Dron</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx9"></div>
-                <p class="is-size-5">Counsel</p>
-              </div>
-              <div class="my-card" data-name="uiUx">
-                <div class="img uiUx10"></div>
-                <p class="is-size-5">STARTUPLY</p>
-              </div>
-              <div class="my-card" data-name="practicing">
-                <div class="img practic1"></div>
-                <p class="is-size-5">Full-CRUD-ajax</p>
+              <div v-for="item in myProjects" :key="item.id" class="my-card">
+                <div class="img" :style="{ backgroundImage: 'url(' + item.projectsImg + ')' }"></div>
+                <p class="is-size-5">{{ item.projectsName }}</p>
               </div>
             </div>
           </div>
@@ -189,7 +65,7 @@
 
 <script>
 import axios from "axios";
-const APImyProjects = "http://localhost:4000/posts";
+const APImyProjects = "http://localhost:4000/myProjects";
 export default {
   data() {
     return { myProjects: [] };
@@ -216,7 +92,15 @@ export default {
       this.myProjects = res.data;
     },
     async getFrountEnd() {
-      const res = await axios.get(APImyProjects + "/?id=2");
+      const res = await axios.get(APImyProjects + "/?type=front-end");
+      this.myProjects = res.data;
+    },
+    async uiUx() {
+      const res = await axios.get(APImyProjects + "/?type=ui-ux");
+      this.myProjects = res.data;
+    },
+    async practicing() {
+      const res = await axios.get(APImyProjects + "/?type=practicing");
       this.myProjects = res.data;
     }
   },

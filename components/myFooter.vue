@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="container">
+    <div class="container myfooter">
       <div class="left">
         <h2>
           <a class href="https://www.facebook.com/amr.ata.16">
@@ -35,7 +35,7 @@
           >Download CV</a>
           <a
             href="https://www.patreon.com/user?alert=2"
-            class="patreon-button button radio downloadCvBtn"
+            class="patreon-button button radio"
             target="_blank"
             rel="noopener"
           ></a>
@@ -51,7 +51,6 @@ footer {
   left: 0;
   right: 0;
   background-color: #ffc107;
-  padding: 0 100px;
   margin-top: 100px;
 }
 

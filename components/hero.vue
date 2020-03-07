@@ -1,10 +1,10 @@
 <template>
   <section class="hero is-fullheight myHero">
-    <img src="~/assets/img/shap-5.svg" alt="shap-5" class="shap-4" />
-    <img src="~/assets/img/shap-11svg.svg" alt="shap-11" class="shap-5" />
+    <img src="~/assets/img/shap-5.svg" alt="shap-4" class="shap-4" />
+    <img src="~/assets/img/shap-5.svg" alt="shap-5" class="shap-5" />
     <div class="hero-body">
       <div class="container">
-        <div class="columns">
+        <div class="columns mainhero">
           <div class="column is-half my-content">
             <span class="is-size-5 is-bold is-white">Hi,</span>
             <p class="is-size-4">My name is Amr Adel Ata</p>

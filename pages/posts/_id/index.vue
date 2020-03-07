@@ -6,7 +6,7 @@
         <div class="singelpost">
           <div class="img" :style="{ backgroundImage: 'url(' + single.img_url + ')' }"></div>
 
-          <div class="content">
+          <div class="mycontent">
             <h3>{{ single.title }}</h3>
             <p>{{ single.body }}</p>
           </div>
@@ -48,6 +48,9 @@ export default {
 </script>
 
 <style  scoped>
+.mycontent {
+  padding: 15px;
+}
 .singelpost {
   padding-top: 150px;
 }
@@ -62,7 +65,7 @@ export default {
 .singelpost h3 {
   font-weight: 300;
   font-size: 35px;
-  width: 80%;
+
   text-align: left;
 }
 

@@ -6,7 +6,7 @@
       <whatIOffer />
       <aboutSection />
       <myProject />
-      <contact />>
+      <contact />
     </div>
   </div>
 </template>

@@ -25,13 +25,19 @@
       "id": 4
     },
     {
-      "title": "Ipsum has been the industry's",
+      "title": "my loremhas been the industry's",
       "img_url": "https://images.pexels.com/photos/1553962/pexels-photo-1553962.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       "id": 5
+    },
+    {
+      "title": "",
+      "img_url": "",
+      "body": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.<br> Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,<br> when an unknown printer took a galley<br> of type and scrambled<br> it to make a type specimen book. It has survived<br> not only five centuries, but also the leap into electronic<br> typesetting, remaining essentially unchanged.<br> It was popularised in the 1960s with the release of Letraset sheets <br>containing Lorem Ipsum passages, and more <br>recently with desktop publishing <br>software like Aldus PageMaker<br> including versions of Lorem Ipsum.",
+      "id": 6
     }
   ],
-  "myProjects":[
+  "myProjects": [
     {
       "projectsImg": "https://i.ibb.co/V2jcgnL/1e-commercewith-vue-nuxt-vuex-vuetify-axios.jpg",
       "projectsName": "E-commerce Vue,VueX,Nuxt",
@@ -43,69 +49,69 @@
       "type": "front-end"
     },
     {
-        "projectsImg": "https://i.ibb.co/fQRyCM5/3moviecinema.jpg",
-        "projectsName": "Movie Cinema",
-        "type": "front-end"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/6N9ZY6P/4egypt-cities.jpg",
-        "projectsName": "Egypt Cities",
-        "type": "front-end"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/ypD49CP/5vue-app-ecommerce-bootstrap.jpg",
-        "projectsName": "E-commerce Vue Firebase",
-        "type": "front-end"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/KhspwCL/1profile.jpg",
-        "projectsName": "Profile",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/C6rBcdV/2-Responsive.jpg",
-        "projectsName": "Responsive",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/B4FTqMB/3-Starnight.jpg",
-        "projectsName": "Starnight",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/689tM5f/5Eclipse.jpg",
-        "projectsName": "Eclipse",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/jLZY7jj/6Colingz.jpg",
-        "projectsName": "Colingz",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/5BW2Ch6/7Acosta.jpg",
-        "projectsName": "Acosta",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/Z1yJTv6/8dron.jpg",
-        "projectsName": "Dron",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/qDXkmrK/9counsel.jpg",
-        "projectsName": "Counsel",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/3FPW7ww/43kod.jpg",
-        "projectsName": "3kod",
-        "type": "ui-ux"
-      },
-      {
-        "projectsImg": "https://i.ibb.co/d08pGh2/1.jpg",
-        "projectsName": "Full-CRUD-ajax",
-        "type": "ui-ux"
-      }
+      "projectsImg": "https://i.ibb.co/fQRyCM5/3moviecinema.jpg",
+      "projectsName": "Movie Cinema",
+      "type": "front-end"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/6N9ZY6P/4egypt-cities.jpg",
+      "projectsName": "Egypt Cities",
+      "type": "front-end"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/ypD49CP/5vue-app-ecommerce-bootstrap.jpg",
+      "projectsName": "E-commerce Vue Firebase",
+      "type": "front-end"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/KhspwCL/1profile.jpg",
+      "projectsName": "Profile",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/C6rBcdV/2-Responsive.jpg",
+      "projectsName": "Responsive",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/B4FTqMB/3-Starnight.jpg",
+      "projectsName": "Starnight",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/689tM5f/5Eclipse.jpg",
+      "projectsName": "Eclipse",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/jLZY7jj/6Colingz.jpg",
+      "projectsName": "Colingz",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/5BW2Ch6/7Acosta.jpg",
+      "projectsName": "Acosta",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/Z1yJTv6/8dron.jpg",
+      "projectsName": "Dron",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/qDXkmrK/9counsel.jpg",
+      "projectsName": "Counsel",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/3FPW7ww/43kod.jpg",
+      "projectsName": "3kod",
+      "type": "ui-ux"
+    },
+    {
+      "projectsImg": "https://i.ibb.co/d08pGh2/1.jpg",
+      "projectsName": "Full-CRUD-ajax",
+      "type": "ui-ux"
+    }
   ]
 }

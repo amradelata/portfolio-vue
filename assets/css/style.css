@@ -1,5 +1,25 @@
 
+.downloadCvBtn {
+  background: #353b48!important;
+  color: #fff!important;
+  
+}
+.patreon-button,
+.downloadCvBtn{
+border-color: transparent !important;
+width: 150px;
+}
 
+
+.downloadCvBtn:hover {
+  color: #fff;
+  outline: none
+}
+
+.downloadCvBtn:focus {
+  color: #fff;
+  outline: none
+}
 
 .button {
   -moz-appearance: none;
@@ -112,18 +132,28 @@ a:hover {
 
 /* phone */
 @media screen and (max-width: 768px) {
-  footer a i {
-    font-size: 35px;
-    margin: 10px 0;
-  }
 
-  footer .left {
-    float: unset;
-    margin-bottom: 50px;
+  .myfooter{
+    /* padding: 20px; */
+    position: relative;
   }
+  .myfooter .right a{
+    display: block;
+  }
+   .myfooter .right { 
+     display: none;
+    /* padding: 0 100px; */
+   /* position: absolute;
+     top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+   }
 
-  footer .right {
-    float: unset;
+  .postes .card{
+    flex-basis: calc(100% - 20px);
+  }
+  .postes .cards{
+    display: inline-block;
   }
 
   .blog {
@@ -189,6 +219,7 @@ a:hover {
 
   .shap-4 {
     top: 0 !important;
+    right: 0;
     height: 500px !important
   }
 
@@ -200,10 +231,7 @@ a:hover {
     text-align: center
   }
 
-  .downloadCvBtn {
-    width: 100px !important;
-    font-size: 13px
-  }
+
 
   .my-buttons {
     display: none;
@@ -216,8 +244,6 @@ a:hover {
   }
 
   .my-buttonsPhone {
-    padding: 110px;
-    /* margin-top: 40px; */
     background-color: #363636;
     position: absolute;
     top: 110px;
@@ -229,19 +255,21 @@ a:hover {
 
   .shap-4 {
     top: 150px !important;
+    right: 0;
   }
 
   .my-buttonsPhone a,
-  .patreon-button,
-  .downloadCvBtn {
-    background-size: cover !important;
-    width: 200px !important;
+  .patreon-button {
     margin: 20px 0;
-    font-size: 18px;
+    display: flex;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
   }
 
+
   #phoneParsNave {
-    left: 350px;
+    left: 85%;
     top: 40px;
     z-index: 1;
     cursor: pointer;
@@ -351,7 +379,7 @@ a:hover {
   }
 
   .myEmail {
-    font-size: 30px !important
+    font-size: 28px !important
   }
 
   .socialMedia {
@@ -460,9 +488,15 @@ a:hover {
   .myProject .cards .my-card {
     flex-basis: calc(100% - 20px);
   }
-
+.mainhero{
+  padding-top: 100px;
+}
   .shap-4 {
-    /* top: -200px !important; */
+    top: -100px !important;
+    right: 0;
+    /* display: none; */
+  }
+  #phoneParsNave{
     display: none;
   }
 
@@ -476,7 +510,14 @@ a:hover {
 /* dell */
 @media screen and (min-width: 1408px) {
 
-
+.shap-4{
+  /* display: none; */
+  top: 220px !important;
+  right: 0;
+}
+.mainhero{
+  padding-top:50px ;
+}
   .my-buttonsPhone {
     display: none;
   }
@@ -530,6 +571,7 @@ a:hover {
 
 /* laptop */
 @media screen and (min-width: 1216px) and (max-width: 1407px) {
+
   .blog img {
     height: 250px;
   }
@@ -582,8 +624,10 @@ a:hover {
     position: absolute;
     height: 770px;
     top: 80px;
-    right: 0
+    right: 0;
+    
   }
+
 
   .my-content {
     padding: 150px 0 !important
@@ -758,23 +802,7 @@ body {
   text-align: center
 }
 
-.downloadCvBtn {
-  background-color: #31475e;
-  border-color: transparent;
-  color: #fff;
-  width: 150px;
-  cursor: pointer
-}
 
-.downloadCvBtn:hover {
-  color: #fff;
-  outline: none
-}
-
-.downloadCvBtn:focus {
-  color: #fff;
-  outline: none
-}
 
 .logo {
   position: absolute;
@@ -834,9 +862,8 @@ body {
 
 .shap-4 {
   position: absolute;
-  height: 1300px;
-  top: 122px;
-  right: 0
+  top: 70px !important;
+  right: 0;
 }
 
 .shap-5 {
