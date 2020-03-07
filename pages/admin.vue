@@ -1,7 +1,7 @@
 <template>
   <div>
     <myNavBar />
-    <div id="admin">
+    <div id="admin" class="container">
       <div id="form">
         <div class="field is-horizontal">
           <div class="field-body">

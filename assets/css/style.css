@@ -132,6 +132,13 @@ a:hover {
 
 /* phone */
 @media screen and (max-width: 768px) {
+  .login{
+    padding: 20px !important;
+    width: 100% !important;
+  }
+  #admin{
+    padding: 150px 0 0 0 !important;
+  }
 
   .myfooter{
     /* padding: 20px; */
