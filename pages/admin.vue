@@ -135,6 +135,7 @@
 
 <script>
 import myNavBar from "~/components/myNavBar.vue";
+const port = process.env.PORT || 4000;
 import axios from "axios";
 const API = "http://localhost:4000/posts";
 export default {

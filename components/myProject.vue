@@ -23,8 +23,10 @@
           <div class="all">
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
-                <div class="img" :style="{ backgroundImage: 'url(' + item.projectsImg + ')' }"></div>
-                <p class="is-size-5">{{ item.projectsName }}</p>
+                <a class="is-size-5" :href="item.pageLink" target="_blank">
+                  <div class="img" :style="{ backgroundImage: 'url(' + item.projectsImg + ')' }"></div>
+                  <p style="color: #000;">{{ item.projectsName }}</p>
+                </a>
               </div>
             </div>
           </div>
@@ -65,6 +67,7 @@
 
 <script>
 import axios from "axios";
+const port = process.env.PORT || 4000;
 const APImyProjects = "http://localhost:4000/myProjects";
 export default {
   data() {
@@ -79,9 +82,7 @@ export default {
     }
   },
   mounted() {
-    this.buttons.forEach((value, index) => {
-      // console.log(value, index);
-    });
+    this.buttons.forEach((value, index) => {});
   },
   methods: {
     projectpars() {
@@ -111,5 +112,12 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.my-card {
+  transition: all 0.3s ease-in-out;
+}
+.my-card:hover {
+  transform: scale(0.9);
+  opacity: 0.6;
+}
 </style>

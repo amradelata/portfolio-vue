@@ -25,6 +25,7 @@
 
 <script>
 import axios from "axios";
+const port = process.env.PORT || 4000;
 const API = "http://localhost:4000/posts";
 import myNavBar from "~/components/myNavBar.vue";
 import myFooter from "~/components/myFooter.vue";

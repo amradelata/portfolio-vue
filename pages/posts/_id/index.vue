@@ -39,6 +39,7 @@ export default {
     }
   },
   async created() {
+    const port = process.env.PORT || 4000;
     const res = await axios.get(`http://localhost:4000/posts/${this.id}`);
     this.posts = res.data;
     // console.log(this.posts.title);
