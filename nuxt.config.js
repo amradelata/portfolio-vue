@@ -13,7 +13,11 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.4.2/css/all.css' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Signika:wght@700&display=swap' }
     ]
+      // script: [
+      //   { src: '@/assets/js/index.js' }
+      // ]
   },
   /*
   ** Customize the progress-bar color

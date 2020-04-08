@@ -46,7 +46,12 @@
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input" v-model="addProductValue" label="NAME" placeholder="title" />
+                <input
+                  class="input"
+                  v-model="myProjectName"
+                  label="NAME"
+                  placeholder="projectsName"
+                />
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
@@ -54,7 +59,7 @@
             </div>
             <div class="field">
               <p class="control is-expanded has-icons-left has-icons-right">
-                <input class="input" v-model="addProductImg" label="IMAGE" placeholder="img" />
+                <input class="input" v-model="myProjectImg" label="IMAGE" placeholder="img" />
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
@@ -68,7 +73,12 @@
 
         <div class="field is-horizontal">
           <div class="field-body">
-            <textarea class="textarea" placeholder="the body" v-model="addProductCategory"></textarea>
+            <input class="input" placeholder="the Type" v-model="myProjectType" />
+          </div>
+        </div>
+        <div class="field is-horizontal">
+          <div class="field-body">
+            <input class="input" placeholder="the LINK" v-model="myProjectLink" />
           </div>
         </div>
         <div class="field is-horizontal">
@@ -79,11 +89,11 @@
       </div>
       <!--  -->
 
-      <div class="box" v-for="(post,index) in posts" :key="post._id">
+      <div class="box" v-for="(post,index) in myProjects" :key="post.id">
         <article class="media">
           <div class="media-left">
             <figure class="image">
-              <div class="img" :style="{ backgroundImage: 'url(' + post.img_url + ')' }"></div>
+              <div class="img" :style="{ backgroundImage: 'url(' + post.projectsImg + ')' }"></div>
             </figure>
           </div>
           <div class="media-content">
@@ -93,22 +103,18 @@
                 <small>amradelata@gmail.com</small>
                 <br />
                 <strong>
-                  <br />
-                  <span :id="post._id" ref="span">ID: {{post._id}}</span>
-                  <br />
-
-                  <span :id="post._id" ref="span">TITLE: {{post.title}}</span>
+                  <span :id="post.id" ref="span">{{post.projectsName}}</span>
                 </strong>
                 <br />
-                <span :id="post._id">BODY: {{post.body}}</span>
+                <span :id="post.id">{{post.type}}</span>
                 <br />
-                <a :href="`/posts/${post._id}`">see the post</a>
+                <a :href="post.pageLink" target="plank">padge link</a>
                 <br />
                 <input
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
-                  :value="post.title"
+                  :value="post.projectsName"
                   ref="input1"
                   id="input"
                 />
@@ -116,7 +122,7 @@
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
-                  :value="post.body"
+                  :value="post.type"
                   ref="input2"
                   id="input"
                 />
@@ -124,13 +130,13 @@
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
-                  :value="post.img_url"
+                  :value="post.projectsImg"
                   ref="input3"
                   id="input"
                 />
                 <button
                   class="button is-danger"
-                  @click="remove(index, post._id)"
+                  @click="remove(index = post.id)"
                   :style="{'display': delet}"
                   ref="delete"
                   id="delete"
@@ -144,7 +150,7 @@
                 >edit</button>
                 <button
                   class="button is-success"
-                  @click="save(index, post._id)"
+                  @click="save(index)"
                   :style="{'display': saveChang}"
                   ref="save"
                   id="save"
@@ -180,17 +186,18 @@
 <script>
 import myNavBar from "~/components/myNavBar.vue";
 import axios from "axios";
-const API = "https://amradelata-blog-api.herokuapp.com/posts";
+const API = "http://localhost:4000/myProjects";
 export default {
   components: {
     myNavBar
   },
   data() {
     return {
-      posts: [],
-      addProductValue: "",
-      addProductImg: "",
-      addProductCategory: "",
+      myProjects: [],
+      myProjectName: "",
+      myProjectImg: "",
+      myProjectType: "",
+      myProjectLink: "",
       change: "inline-block",
       delet: "inline-block",
       saveChang: "none",
@@ -219,25 +226,24 @@ export default {
     },
     async addProduct() {
       const res = await axios.post(API, {
-        title: this.addProductValue,
-        body: this.addProductCategory,
-        img_url: this.addProductImg
+        projectsImg: this.myProjectName,
+        projectsName: this.myProjectImg,
+        type: this.myProjectType,
+        pageLink: this.myProjectLink
       });
-
-      this.posts.push(res.data);
-      this.addProductValue = "";
-      this.addProductImg = "";
-      this.addProductCategory = "";
+      this.myProjects.push(res.data);
+      this.myProjectName = "";
+      this.myProjectImg = "";
+      this.myProjectType = "";
+      this.myProjectLink = "";
     },
-    async remove(index, id) {
-      console.log(index, id);
-      console.log(`https://amradelata-blog-api.herokuapp.com/posts/` + id);
+    async remove(index) {
+      // console.log(index);
       const res = await axios.delete(
-        `https://amradelata-blog-api.herokuapp.com/posts/` + id
+        "http://localhost:4000/myProjects/" + index
       );
       const dele = await axios.get(API);
-      this.posts = dele.data;
-      this.posts = this.posts.posts;
+      this.myProjects = dele.data;
     },
     edit(index) {
       const input1 = this.$refs["input1"][index];
@@ -252,11 +258,11 @@ export default {
       save.style.display = "inline-block";
       // console.log(edit);
     },
-    async save(index, id) {
-      // console.log();
+    async save(index) {
       const input1 = this.$refs["input1"][index];
       const input2 = this.$refs["input2"][index];
       const input3 = this.$refs["input3"][index];
+      const span = this.$refs["span"][index].id;
 
       const input1Value = this.$refs["input1"][index].value;
       const input2Value = this.$refs["input2"][index].value;
@@ -270,25 +276,20 @@ export default {
       edit.style.display = "inline-block";
       save.style.display = "none";
 
-      const res = await axios.patch(
-        `https://amradelata-blog-api.herokuapp.com/posts/` + id,
-        {
-          title: input1Value,
-          body: input2Value,
-          img_url: input3Value
-        }
-      );
+      const res = await axios.patch(API + "/" + span, {
+        projectsName: input1Value,
+        type: input2Value,
+        projectsImg: input3Value
+      });
       const edi = await axios.get(API);
-      this.posts = edi.data;
-      this.posts = this.posts;
-      console.log("this.posts");
+      this.API = edi.data;
+      // console.log(span);
     }
   },
   async created() {
     const res = await axios.get(API);
-    this.posts = res.data;
-    this.posts = this.posts.posts;
-    // console.log(this.posts.posts);
+    this.myProjects = res.data;
+    // console.log(this.myProjects);
   }
 };
 </script>
@@ -297,7 +298,7 @@ export default {
 #admin {
   position: relative;
   padding: 150px 100px 100px 100px;
-  /* display: none; */
+  display: none;
 }
 .loginCard {
   position: absolute;

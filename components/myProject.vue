@@ -67,8 +67,8 @@
 
 <script>
 import axios from "axios";
-const port = process.env.PORT || 4000;
-const APImyProjects = "http://localhost:4000/myProjects";
+
+const APImyProjects = "https://portfolio-databse.herokuapp.com/myProjects";
 export default {
   data() {
     return { myProjects: [] };

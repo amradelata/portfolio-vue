@@ -28,7 +28,7 @@
         <h2>
           <a class href="./blog.html"></a>
           <a
-            href="/assets/cv/Amr-adel-ata-frontEndCV.pdf"
+            href="https://github.com/amradelata/portfolio-vue/blob/master/assets/cv/Amr-adel-ata-frontEndCV.pdf"
             target="_blank"
             download
             class="button downloadCvBtn radio"

@@ -11,7 +11,8 @@
 
         <!-- href="https://drive.google.com/open?id=1PKZ9yZvnuVU_cok9enCibwViG5ZrfqvB" -->
         <a
-          href="~/./assets/cv/Amr-adel-ata-frontEndCV.pdf"
+          href="https://github.com/amradelata/portfolio-vue/blob/master/assets/cv/Amr-adel-ata-frontEndCV.pdf"
+          download
           target="_blank"
           class="button downloadCvBtn radio"
         >Download CV</a>
@@ -34,7 +35,7 @@
       <nuxt-link to="/posts" class="button radio downloadCvBtn">My Blog</nuxt-link>
 
       <a
-        href="./assets/cv/Amr-adel-ata-frontEndCV.pdf"
+        href="https://github.com/amradelata/portfolio-vue/blob/master/assets/cv/Amr-adel-ata-frontEndCV.pdf"
         target="_blank"
         download
         class="button downloadCvBtn radio"

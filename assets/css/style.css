@@ -1,4 +1,6 @@
-
+.box{
+  display: none;
+}
 .downloadCvBtn {
   background: #353b48!important;
   color: #fff!important;
@@ -136,9 +138,7 @@ a:hover {
     padding: 20px !important;
     width: 100% !important;
   }
-  #admin{
-    padding: 150px 0 0 0 !important;
-  }
+
 
   .myfooter{
     /* padding: 20px; */
@@ -161,6 +161,8 @@ a:hover {
   }
   .postes .cards{
     display: inline-block;
+    padding: 0 ;
+
   }
 
   .blog {
@@ -174,10 +176,14 @@ a:hover {
     padding: 0 35px;
   }
 
-  .singelBlog h3 {
-    font-size: 25px;
+  /* .singelBlog h3 {
+    font-size: 5.6rem;
     width: 100%;
-  }
+    font-family: Signika,sans-serif;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1;
+  } */
 
   .my-buttonsPhone {
     display: none;

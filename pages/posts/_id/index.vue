@@ -35,14 +35,16 @@ export default {
   computed: {
     single() {
       return this.posts;
-      console.log(this.posts);
+      // console.log(this.posts);
     }
   },
   async created() {
-    const port = process.env.PORT || 4000;
-    const res = await axios.get(`http://localhost:4000/posts/${this.id}`);
+    const res = await axios.get(
+      `https://amradelata-blog-api.herokuapp.com/posts/${this.id}`
+    );
     this.posts = res.data;
-    // console.log(this.posts.title);
+    this.posts = this.posts.post;
+    console.log(this.posts);
     // alert(this.posts.title);
   }
 };
@@ -64,10 +66,13 @@ export default {
   border-radius: 0;
 }
 .singelpost h3 {
-  font-weight: 300;
-  font-size: 35px;
-
-  text-align: left;
+  font-size: 3.6rem;
+  width: 100%;
+  font-family: Signika, sans-serif;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+  margin-bottom: 50px;
 }
 
 .singelpost p {
