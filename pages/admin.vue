@@ -46,7 +46,7 @@
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input class="input" v-model="addProductValue" label="NAME" placeholder="title" />
+                <input class="input" v-model="addPostTitle" label="NAME" placeholder="title" />
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
@@ -54,7 +54,7 @@
             </div>
             <div class="field">
               <p class="control is-expanded has-icons-left has-icons-right">
-                <input class="input" v-model="addProductImg" label="IMAGE" placeholder="img" />
+                <input class="input" v-model="addPostImg" label="IMAGE" placeholder="img" />
                 <span class="icon is-small is-left">
                   <i class="fas fa-envelope"></i>
                 </span>
@@ -68,7 +68,7 @@
 
         <div class="field is-horizontal">
           <div class="field-body">
-            <textarea class="textarea" placeholder="the body" v-model="addProductCategory"></textarea>
+            <textarea class="textarea" placeholder="the body" v-model="addPostBody"></textarea>
           </div>
         </div>
         <div class="field is-horizontal">
@@ -94,17 +94,18 @@
                 <br />
                 <strong>
                   <br />
-                  <span :id="post._id" ref="span">ID: {{post._id}}</span>
+                  <span ref="span">ID: {{post._id}}</span>
                   <br />
 
-                  <span :id="post._id" ref="span">TITLE: {{post.title}}</span>
+                  <span ref="span">TITLE: {{post.title}}</span>
                 </strong>
                 <br />
-                <span :id="post._id">BODY: {{post.body}}</span>
+                <span>BODY: {{post.body}}</span>
                 <br />
                 <a :href="`/posts/${post._id}`">see the post</a>
                 <br />
                 <input
+                  placeholder="ADD NAME"
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
@@ -113,6 +114,7 @@
                   id="input"
                 />
                 <input
+                  placeholder="ADD BODY"
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
@@ -121,6 +123,7 @@
                   id="input"
                 />
                 <input
+                  placeholder="ADD IMAGE"
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
@@ -130,7 +133,7 @@
                 />
                 <button
                   class="button is-danger"
-                  @click="remove(index, post._id)"
+                  @click="remove(post._id)"
                   :style="{'display': delet}"
                   ref="delete"
                   id="delete"
@@ -144,7 +147,7 @@
                 >edit</button>
                 <button
                   class="button is-success"
-                  @click="save(index, post._id)"
+                  @click="save(index,post._id)"
                   :style="{'display': saveChang}"
                   ref="save"
                   id="save"
@@ -188,15 +191,13 @@ export default {
   data() {
     return {
       posts: [],
-      addProductValue: "",
-      addProductImg: "",
-      addProductCategory: "",
+      addPostTitle: "",
+      addPostImg: "",
+      addPostBody: "",
       change: "inline-block",
       delet: "inline-block",
       saveChang: "none",
       input: "none",
-      change: "inline-block",
-      delet: "inline-block",
       scrollToTop: true,
       myemail: "",
       mybassword: ""
@@ -219,25 +220,24 @@ export default {
     },
     async addProduct() {
       const res = await axios.post(API, {
-        title: this.addProductValue,
-        body: this.addProductCategory,
-        img_url: this.addProductImg
+        title: this.addPostTitle,
+        body: this.addPostBody,
+        img_url: this.addPostImg
       });
 
       this.posts.push(res.data);
-      this.addProductValue = "";
-      this.addProductImg = "";
-      this.addProductCategory = "";
+      this.addPostTitle = "";
+      this.addPostImg = "";
+      this.addPostBody = "";
     },
-    async remove(index, id) {
-      console.log(index, id);
-      console.log(`https://amradelata-blog-api.herokuapp.com/posts/` + id);
-      const res = await axios.delete(
-        `https://amradelata-blog-api.herokuapp.com/posts/` + id
-      );
+    async remove(id) {
+      console.log(API + "/" + id);
+      const myres = await axios.delete(API + "/" + id, {
+        success: true,
+        message: "Post deleted."
+      });
       const dele = await axios.get(API);
-      this.posts = dele.data;
-      this.posts = this.posts.posts;
+      this.posts = dele.data.posts;
     },
     edit(index) {
       const input1 = this.$refs["input1"][index];
@@ -253,7 +253,7 @@ export default {
       // console.log(edit);
     },
     async save(index, id) {
-      // console.log();
+      console.log(id);
       const input1 = this.$refs["input1"][index];
       const input2 = this.$refs["input2"][index];
       const input3 = this.$refs["input3"][index];
@@ -279,16 +279,16 @@ export default {
         }
       );
       const edi = await axios.get(API);
-      this.posts = edi.data;
-      this.posts = this.posts;
-      console.log("this.posts");
+      this.posts = edi.data.posts;
+
+      console.log(this.posts);
     }
   },
   async created() {
     const res = await axios.get(API);
-    this.posts = res.data;
-    this.posts = this.posts.posts;
-    // console.log(this.posts.posts);
+    this.posts = res.data.posts;
+
+    console.log(res.data.posts);
   }
 };
 </script>

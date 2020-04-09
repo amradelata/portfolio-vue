@@ -9,6 +9,8 @@
           <div class="mycontent">
             <h3>{{ single.title }}</h3>
             <p>{{ single.body }}</p>
+            <p>updatedAt: {{ single.updatedAt }}</p>
+            <p>createdAt: {{ single.createdAt }}</p>
           </div>
         </div>
       </div>

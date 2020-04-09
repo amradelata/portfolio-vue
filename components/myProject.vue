@@ -23,9 +23,9 @@
           <div class="all">
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
-                <a class="is-size-5" :href="item.pageLink" target="_blank">
-                  <div class="img" :style="{ backgroundImage: 'url(' + item.projectsImg + ')' }"></div>
-                  <p style="color: #000;">{{ item.projectsName }}</p>
+                <a class="is-size-5" :href="item.link" target="_blank">
+                  <div class="img" :style="{ backgroundImage: 'url(' + item.img_url + ')' }"></div>
+                  <p style="color: #000;">{{ item.name }}</p>
                 </a>
               </div>
             </div>
@@ -68,7 +68,7 @@
 <script>
 import axios from "axios";
 
-const APImyProjects = "https://portfolio-databse.herokuapp.com/myProjects";
+const APImyProjects = "https://amradelata-blog-api.herokuapp.com/projects";
 export default {
   data() {
     return { myProjects: [] };
@@ -90,24 +90,25 @@ export default {
     },
     async getAll() {
       const res = await axios.get(APImyProjects);
-      this.myProjects = res.data;
+      this.myProjects = res.data.projects;
     },
     async getFrountEnd() {
       const res = await axios.get(APImyProjects + "/?type=front-end");
-      this.myProjects = res.data;
+      this.myProjects = res.data.projects;
     },
     async uiUx() {
       const res = await axios.get(APImyProjects + "/?type=ui-ux");
-      this.myProjects = res.data;
+      this.myProjects = res.data.projects;
     },
     async practicing() {
       const res = await axios.get(APImyProjects + "/?type=practicing");
-      this.myProjects = res.data;
+      this.myProjects = res.data.projects;
     }
   },
   async created() {
     const res = await axios.get(APImyProjects);
-    this.myProjects = res.data;
+    this.myProjects = res.data.projects;
+    console.log(this.myProjects);
   }
 };
 </script>

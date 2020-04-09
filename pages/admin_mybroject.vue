@@ -46,12 +46,7 @@
           <div class="field-body">
             <div class="field">
               <p class="control is-expanded has-icons-left">
-                <input
-                  class="input"
-                  v-model="myProjectName"
-                  label="NAME"
-                  placeholder="projectsName"
-                />
+                <input class="input" v-model="myProjectName" label="NAME" placeholder="name" />
                 <span class="icon is-small is-left">
                   <i class="fas fa-user"></i>
                 </span>
@@ -83,17 +78,17 @@
         </div>
         <div class="field is-horizontal">
           <div class="field-body">
-            <button class="button is-primary is-fullwidth" @click="addProduct">add</button>
+            <button class="button is-primary is-fullwidth" @click="addProject">add</button>
           </div>
         </div>
       </div>
       <!--  -->
 
-      <div class="box" v-for="(post,index) in myProjects" :key="post.id">
+      <div class="box" v-for="(post,index) in myProjects" :key="post._id">
         <article class="media">
           <div class="media-left">
             <figure class="image">
-              <div class="img" :style="{ backgroundImage: 'url(' + post.projectsImg + ')' }"></div>
+              <div class="img" :style="{ backgroundImage: 'url(' + post.img_url + ')' }"></div>
             </figure>
           </div>
           <div class="media-content">
@@ -103,22 +98,24 @@
                 <small>amradelata@gmail.com</small>
                 <br />
                 <strong>
-                  <span :id="post.id" ref="span">{{post.projectsName}}</span>
+                  <span ref="span">{{post.name}}</span>
                 </strong>
                 <br />
-                <span :id="post.id">{{post.type}}</span>
+                <span>{{post.type}}</span>
                 <br />
-                <a :href="post.pageLink" target="plank">padge link</a>
+                <a :href="post.link" target="plank">padge link</a>
                 <br />
                 <input
+                  placeholder="ADD NAME"
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
-                  :value="post.projectsName"
+                  :value="post.name"
                   ref="input1"
                   id="input"
                 />
                 <input
+                  placeholder="ADD TYPE"
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
@@ -127,16 +124,27 @@
                   id="input"
                 />
                 <input
+                  placeholder="ADD IMAGE"
                   class="input is-primary"
                   type="text"
                   :style="{'display': input}"
-                  :value="post.projectsImg"
+                  :value="post.img_url"
                   ref="input3"
                   id="input"
                 />
+                <input
+                  placeholder="ADD LINK"
+                  class="input is-primary"
+                  type="text"
+                  :style="{'display': input}"
+                  :value="post.link"
+                  ref="input4"
+                  id="input"
+                />
+
                 <button
                   class="button is-danger"
-                  @click="remove(index = post.id)"
+                  @click="remove(post._id)"
                   :style="{'display': delet}"
                   ref="delete"
                   id="delete"
@@ -150,7 +158,7 @@
                 >edit</button>
                 <button
                   class="button is-success"
-                  @click="save(index)"
+                  @click="save(index, post._id)"
                   :style="{'display': saveChang}"
                   ref="save"
                   id="save"
@@ -186,7 +194,7 @@
 <script>
 import myNavBar from "~/components/myNavBar.vue";
 import axios from "axios";
-const API = "http://localhost:4000/myProjects";
+const API = "https://amradelata-blog-api.herokuapp.com/projects";
 export default {
   components: {
     myNavBar
@@ -198,12 +206,10 @@ export default {
       myProjectImg: "",
       myProjectType: "",
       myProjectLink: "",
-      change: "inline-block",
       delet: "inline-block",
       saveChang: "none",
       input: "none",
       change: "inline-block",
-      delet: "inline-block",
       scrollToTop: true,
       myemail: "",
       mybassword: ""
@@ -224,12 +230,12 @@ export default {
     close() {
       this.$refs["notification"].style.display = "none";
     },
-    async addProduct() {
+    async addProject() {
       const res = await axios.post(API, {
-        projectsImg: this.myProjectName,
-        projectsName: this.myProjectImg,
+        name: this.myProjectName,
         type: this.myProjectType,
-        pageLink: this.myProjectLink
+        link: this.myProjectLink,
+        img_url: this.myProjectImg
       });
       this.myProjects.push(res.data);
       this.myProjectName = "";
@@ -237,59 +243,66 @@ export default {
       this.myProjectType = "";
       this.myProjectLink = "";
     },
-    async remove(index) {
-      // console.log(index);
+    async remove(id) {
       const res = await axios.delete(
-        "http://localhost:4000/myProjects/" + index
+        `https://amradelata-blog-api.herokuapp.com/projects/` + id
       );
-      const dele = await axios.get(API);
-      this.myProjects = dele.data;
+      const delet = await axios.get(API);
+      this.myProjects = delet.data.projects;
     },
     edit(index) {
       const input1 = this.$refs["input1"][index];
       const input2 = this.$refs["input2"][index];
       const input3 = this.$refs["input3"][index];
+      const input4 = this.$refs["input4"][index];
       const edit = this.$refs["edit"][index];
       const save = this.$refs["save"][index];
       input1.style.display = "inline-block";
       input2.style.display = "inline-block";
       input3.style.display = "inline-block";
+      input4.style.display = "inline-block";
       edit.style.display = "none";
       save.style.display = "inline-block";
       // console.log(edit);
     },
-    async save(index) {
+    async save(index, id) {
       const input1 = this.$refs["input1"][index];
       const input2 = this.$refs["input2"][index];
       const input3 = this.$refs["input3"][index];
-      const span = this.$refs["span"][index].id;
+      const input4 = this.$refs["input4"][index];
 
       const input1Value = this.$refs["input1"][index].value;
       const input2Value = this.$refs["input2"][index].value;
       const input3Value = this.$refs["input3"][index].value;
+      const input4Value = this.$refs["input4"][index].value;
 
       const edit = this.$refs["edit"][index];
       const save = this.$refs["save"][index];
       input1.style.display = "none";
       input2.style.display = "none";
       input3.style.display = "none";
+      input4.style.display = "none";
       edit.style.display = "inline-block";
       save.style.display = "none";
 
-      const res = await axios.patch(API + "/" + span, {
-        projectsName: input1Value,
-        type: input2Value,
-        projectsImg: input3Value
-      });
+      const res = await axios.patch(
+        `https://amradelata-blog-api.herokuapp.com/projects/` + id,
+        {
+          name: input1Value,
+          type: input2Value,
+          link: input4Value,
+          img_url: input3Value
+        }
+      );
       const edi = await axios.get(API);
-      this.API = edi.data;
+      this.myProjects = edi.data.projects;
       // console.log(span);
     }
   },
   async created() {
     const res = await axios.get(API);
-    this.myProjects = res.data;
-    // console.log(this.myProjects);
+    this.myProjects = res.data.projects;
+    console.log(this.myProjects);
   }
 };
 </script>
@@ -298,7 +311,7 @@ export default {
 #admin {
   position: relative;
   padding: 150px 100px 100px 100px;
-  display: none;
+  display: block;
 }
 .loginCard {
   position: absolute;
