@@ -50,25 +50,22 @@ footer {
   position: absolute;
   left: 0;
   right: 0;
+  /* bottom: 0; */
   background-color: #ffc107;
   margin-top: 100px;
 }
-
 footer h2,
 footer a {
   margin: 25px 0;
   color: #31475e;
 }
-
 footer i {
   font-size: 50px;
   margin: 10px 20px;
 }
-
 footer .left {
   float: left;
 }
-
 footer .right {
   float: right;
 }

@@ -2,7 +2,7 @@
   <div>
     <myNavBar />
     <!-- login -->
-    <div class="container loginCard">
+    <div class="container loginCard" ref="loginCard">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
           <input class="input" type="email" placeholder="Email" v-model="myemail" />
@@ -221,6 +221,7 @@ export default {
       if (this.mybassword && this.myemail == 1) {
         console.log("true");
         this.$refs["myadmin"].style.display = "block";
+        this.$refs["loginCard"].style.display = "none";
       } else {
         console.log("false");
         this.$refs["notification"].style.display = "block";
@@ -311,7 +312,7 @@ export default {
 #admin {
   position: relative;
   padding: 150px 100px 100px 100px;
-  display: block;
+  display: none;
 }
 .loginCard {
   position: absolute;

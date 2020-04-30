@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="myProject desktop">
+    <section class="myProject desktop" id="myProjectDesktop">
       <div class="dark">
         <div class="yalow"></div>
         <div class="yalow"></div>
@@ -13,6 +13,7 @@
             <button id="front-end" @click="getFrountEnd">Front-end</button>
             <button id="uiUx" @click="uiUx">UI/UX</button>
             <button id="practicing" @click="practicing">Practicing</button>
+            <button id="onlineProject" @click="onlineProject">Online-Project</button>
           </div>
         </div>
         <div class="tapGray">
@@ -24,7 +25,10 @@
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
                 <a class="is-size-5" :href="item.link" target="_blank">
-                  <div class="img" :style="{ backgroundImage: 'url(' + item.img_url + ')' }"></div>
+                  <div
+                    class="imgMyproject"
+                    :style="{ backgroundImage: 'url(' + item.img_url + ')' }"
+                  ></div>
                   <p style="color: #000;">{{ item.name }}</p>
                 </a>
               </div>
@@ -33,7 +37,7 @@
         </div>
       </div>
     </section>
-    <div class="demo__phone phone">
+    <div class="demo__phone phone" id="myProjectPhone">
       <div class="demo__screen-wrapper">
         <div class="demo__screen">
           <a href="https://github.com/amradelata" class="gitPtn">
@@ -46,12 +50,18 @@
             <button id="front-end" @click="getFrountEnd">Front-end</button>
             <button id="uiUx" @click="uiUx">Ui/Ux</button>
             <button id="practicing" @click="practicing">Practicing</button>
+            <button id="onlineProject" @click="onlineProject">Online-Project</button>
           </div>
           <div class="all">
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
-                <div class="img" :style="{ backgroundImage: 'url(' + item.projectsImg + ')' }"></div>
-                <p class="is-size-5">{{ item.projectsName }}</p>
+                <a :href="item.link" target="blank">
+                  <div
+                    class="imgMyproject"
+                    :style="{ backgroundImage: 'url(' + item.img_url + ')' }"
+                  ></div>
+                  <p class="is-size-5" style="color: #000">{{ item.name }}</p>
+                </a>
               </div>
             </div>
           </div>
@@ -91,18 +101,27 @@ export default {
     async getAll() {
       const res = await axios.get(APImyProjects);
       this.myProjects = res.data.projects;
+      this.$refs["top-buttonphone"].classList.toggle("heid");
     },
     async getFrountEnd() {
       const res = await axios.get(APImyProjects + "/?type=front-end");
       this.myProjects = res.data.projects;
+      this.$refs["top-buttonphone"].classList.toggle("heid");
     },
     async uiUx() {
       const res = await axios.get(APImyProjects + "/?type=ui-ux");
       this.myProjects = res.data.projects;
+      this.$refs["top-buttonphone"].classList.toggle("heid");
     },
     async practicing() {
       const res = await axios.get(APImyProjects + "/?type=practicing");
       this.myProjects = res.data.projects;
+      this.$refs["top-buttonphone"].classList.toggle("heid");
+    },
+    async onlineProject() {
+      const res = await axios.get(APImyProjects + "/?type=onlineProject");
+      this.myProjects = res.data.projects;
+      this.$refs["top-buttonphone"].classList.toggle("heid");
     }
   },
   async created() {

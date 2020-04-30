@@ -13,6 +13,15 @@
               <img src="~/assets/img/icons/js.png" alt="js" />
               <img src="~/assets/img/icons/vue.png" alt="vue" />
             </div>
+            <div class="herobtn">
+              <a
+                href="https://github.com/amradelata/portfolio-vue/blob/master/assets/cv/Amr-adel-ata-frontEndCV.pdf"
+                download
+                target="_blank"
+                class="button downloadCvBtn radio"
+              >Download CV</a>
+              <a class="button downloadCvBtn radio" @click="scrollToMyProjects()">Projects</a>
+            </div>
           </div>
           <div class="column is-half hero-emage"></div>
         </div>
@@ -22,7 +31,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    scrollToMyProjects() {
+      document.getElementById("myProjectPhone").scrollIntoView();
+      document.getElementById("myProjectDesktop").scrollIntoView();
+    }
+  },
+  created() {}
+};
 </script>
 
 <style  scoped>

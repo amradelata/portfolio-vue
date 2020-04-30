@@ -1,5 +1,5 @@
 <template>
-  <section class="hero is-fullheight">
+  <section class="is-fullheight">
     <div class="whatIOffer">
       <div class="container">
         <div class="columns">

@@ -3,21 +3,25 @@
     <myNavBar />
     <div class="container">
       <div class="postes">
-        <div class="cards">
-          <div class="card" v-for="post in posts" :key="post._id">
-            <nuxt-link :to="'posts/' + post._id">
-              <div>
-                <div class="img" :style="{backgroundImage: 'url('+ post.img_url+')'}"></div>
-                <div class="content">
-                  <h3>{{post.title.slice(0, 18)}}</h3>
-                  <p>{{post.body.slice(0, 20)+ " ..."}}</p>
+        <div class="blogs">
+          <div class="blog" v-for="post in posts" :key="post._id">
+            <nuxt-link :to="'/posts/' + post._id">
+              <div class>
+                <div class="date">
+                  <span class="is-size-3">{{post.updatedAt.slice(8, 10)}}</span>
+                  <br />
+                  <span>{{post.updatedAt.slice(6, 7)}}</span>
+                  <br />
+                  <span>{{post.updatedAt.slice(0, 4)}}</span>
                 </div>
+                <div class="img" :style="{backgroundImage: 'url('+ post.img_url+')'}"></div>
               </div>
-              <div class="myhover">
+              <div class="content">
                 <h3>{{post.title}}</h3>
               </div>
             </nuxt-link>
           </div>
+          <!--  -->
         </div>
       </div>
     </div>
@@ -50,54 +54,6 @@ export default {
 </script>
 
 <style  scoped>
-h1 {
-  font-size: 30px;
-}
-
-.postes {
-  padding-top: 150px;
-  display: inline-flex;
-}
-
-.card {
-  position: relative;
-  flex-basis: calc(33.333% - 20px);
-  margin: 10px;
-  cursor: pointer;
-}
-.card .img {
-  border-radius: 0;
-  background-size: cover;
-}
-.card .content {
-  text-align: left;
-  padding: 25px;
-}
-.card .content h3 {
-  font-weight: lighter;
-  font-size: 30px;
-}
-.card .content p {
-  font-weight: lighter;
-  font-size: 20px;
-}
-.myhover h3 {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s linear 0.2s, opacity 0.2s linear;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  padding: 10px;
-}
-.card:hover .myhover h3 {
-  visibility: visible;
-  opacity: 1;
-  transition-delay: 0s;
-}
 </style>
 
 

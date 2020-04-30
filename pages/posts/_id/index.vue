@@ -4,13 +4,13 @@
     <div>
       <div class="container">
         <div class="singelpost">
-          <div class="img" :style="{ backgroundImage: 'url(' + single.img_url + ')' }"></div>
+          <div class="img" :style="{ backgroundImage: 'url(' + this.posts.img_url + ')' }"></div>
 
           <div class="mycontent">
-            <h3>{{ single.title }}</h3>
-            <p>{{ single.body }}</p>
-            <p>updatedAt: {{ single.updatedAt }}</p>
-            <p>createdAt: {{ single.createdAt }}</p>
+            <h3>{{ this.posts.title }}</h3>
+            <p>{{ this.posts.body }}</p>
+            <p>updatedAt: {{ this.posts.updatedAt }}</p>
+            <p>createdAt: {{ this.posts.createdAt }}</p>
           </div>
         </div>
       </div>
@@ -34,20 +34,12 @@ export default {
       posts: []
     };
   },
-  computed: {
-    single() {
-      return this.posts;
-      // console.log(this.posts);
-    }
-  },
   async created() {
     const res = await axios.get(
       `https://amradelata-blog-api.herokuapp.com/posts/${this.id}`
     );
-    this.posts = res.data;
-    this.posts = this.posts.post;
-    console.log(this.posts);
-    // alert(this.posts.title);
+    this.posts = res.data.post;
+    // console.log(res.data.post);
   }
 };
 </script>
@@ -58,6 +50,7 @@ export default {
 }
 .singelpost {
   padding-top: 150px;
+  overflow-wrap: break-word;
 }
 .singelpost .img {
   height: 80vh;
@@ -68,7 +61,7 @@ export default {
   border-radius: 0;
 }
 .singelpost h3 {
-  font-size: 3.6rem;
+  font-size: 2.6rem;
   width: 100%;
   font-family: Signika, sans-serif;
   font-weight: 700;

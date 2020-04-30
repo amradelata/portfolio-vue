@@ -2,7 +2,7 @@
   <div>
     <myNavBar />
     <!-- login -->
-    <div class="container loginCard">
+    <div class="container loginCard" ref="loginCard">
       <div class="field">
         <p class="control has-icons-left has-icons-right">
           <input class="input" type="email" placeholder="Email" v-model="myemail" />
@@ -207,10 +207,11 @@ export default {
     chekme() {
       // console.log();
       if (this.mybassword && this.myemail == 1) {
-        console.log("true");
+        // console.log("true");
         this.$refs["myadmin"].style.display = "block";
+        this.$refs["loginCard"].style.display = "none";
       } else {
-        console.log("false");
+        // console.log("false");
         this.$refs["notification"].style.display = "block";
         this.$refs["myadmin"].style.display = "none";
       }
@@ -231,7 +232,7 @@ export default {
       this.addPostBody = "";
     },
     async remove(id) {
-      console.log(API + "/" + id);
+      // console.log(API + "/" + id);
       const myres = await axios.delete(API + "/" + id, {
         success: true,
         message: "Post deleted."
@@ -253,7 +254,7 @@ export default {
       // console.log(edit);
     },
     async save(index, id) {
-      console.log(id);
+      // console.log(id);
       const input1 = this.$refs["input1"][index];
       const input2 = this.$refs["input2"][index];
       const input3 = this.$refs["input3"][index];
@@ -281,14 +282,14 @@ export default {
       const edi = await axios.get(API);
       this.posts = edi.data.posts;
 
-      console.log(this.posts);
+      // console.log(this.posts);
     }
   },
   async created() {
     const res = await axios.get(API);
     this.posts = res.data.posts;
 
-    console.log(res.data.posts);
+    // console.log(res.data.posts[2].body);
   }
 };
 </script>
@@ -297,7 +298,7 @@ export default {
 #admin {
   position: relative;
   padding: 150px 100px 100px 100px;
-  /* display: none; */
+  display: none;
 }
 .loginCard {
   position: absolute;

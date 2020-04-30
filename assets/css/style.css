@@ -1,3 +1,8 @@
+
+.herobtn{
+  margin: 25px 0
+}
+
 .box{
   display: none;
 }
@@ -132,39 +137,88 @@ a:hover {
   font-size: .75rem !important
 }
 
+.postes {
+  padding-top: 100px;
+  }
+.blogs {
+  
+  margin-top: 150px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.blog {
+  flex-basis: calc(33.333% - 20px);
+  display: inline-block;
+  margin: 10px;
+}
+
+.blog .date {
+  position: absolute;
+  background-color: #31475e;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+}
+
+.blog .content {
+  padding: 15px 0;
+  color: #120d30;
+  width: 300px;
+  overflow-x: hidden;
+}
+
+.blog .content h3 {
+  margin: 0;
+  font-size: 20px;
+  text-align: left;
+  font-weight: 800;
+  font-family: Signika, sans-serif;
+  height: 8px;
+}
+
+
+
 /* phone */
+@media screen and (max-width: 400px){
+.herobtn .button{
+    width: 100px;
+    font-size: 13px;
+  }
+}
 @media screen and (max-width: 768px) {
+
+  
+
+  .postes {
+  
+  padding-top: 0;
+}
+
+.aboutSection{
+  margin-bottom: 200px;
+}
+  #admin{
+    padding: 0 !important;
+    padding-top: 100px !important;
+  }
   .login{
     padding: 20px !important;
     width: 100% !important;
   }
 
-
   .myfooter{
-    /* padding: 20px; */
-    position: relative;
-  }
-  .myfooter .right a{
-    display: block;
+  text-align: center;
   }
    .myfooter .right { 
      display: none;
-    /* padding: 0 100px; */
-   /* position: absolute;
-     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
    }
 
-  .postes .card{
-    flex-basis: calc(100% - 20px);
-  }
-  .postes .cards{
-    display: inline-block;
-    padding: 0 ;
 
-  }
 
+   
   .blog {
     flex-basis: calc(100% - 20px);
   }
@@ -176,14 +230,15 @@ a:hover {
     padding: 0 35px;
   }
 
-  /* .singelBlog h3 {
-    font-size: 5.6rem;
+  .singelBlog h3 {
+    font-size: 25px;
     width: 100%;
-    font-family: Signika,sans-serif;
-    font-weight: 700;
-    margin: 0;
-    line-height: 1.1;
-  } */
+  }
+
+
+
+
+
 
   .my-buttonsPhone {
     display: none;
@@ -222,13 +277,15 @@ a:hover {
   }
 
   .myHero {
-    padding-top: 100px
+    padding-top: 100px;
+    text-align: center;
   }
 
   .hero-emage {
     margin-top: 50px !important;
     margin-bottom: 50px !important
   }
+
 
   .shap-4 {
     top: 0 !important;
@@ -240,61 +297,59 @@ a:hover {
     padding: 15px !important
   }
 
-  .container {
-    text-align: center
-  }
-
-
 
   .my-buttons {
     display: none;
   }
-
   .disblay-block {
     display: block;
-    transition: 50ms;
-
+    transition: opacity 0.35s;
   }
-
-  .my-buttonsPhone {
-    background-color: #363636;
-    position: absolute;
-    top: 110px;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    z-index: 1;
-  }
-
   .shap-4 {
     top: 150px !important;
     right: 0;
+  }
+  #myNav{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+  .my-buttonsPhone {
+    position: absolute;
+    background-color: #363636;
+    top: 112px;
+    height: 100vh;
+    right: 0;
+    left: 0;
+    z-index: 9999999;
+  }
+
+  #phoneParsNave {
+   position: absolute;
+    left: 85%;
+    top: 40px;
+    z-index: 9999999;
   }
 
   .my-buttonsPhone a,
   .patreon-button {
     margin: 20px 0;
-    display: flex;
+    display: block;
+    width: 150px;
     top: 10%;
     left: 50%;
-    transform: translate(-50%, -10%);
-  }
+    transform: translate(-50%, 0);
+     }
 
-
-  #phoneParsNave {
-    left: 85%;
-    top: 40px;
-    z-index: 1;
-    cursor: pointer;
-  }
 
   .logo {
     left: -20px !important
   }
 
   .whatIOffer {
-    margin-top: 0 !important;
-    margin-bottom: 100px !important
+    margin: 0 !important;
+    padding: 0!important;
   }
 
   .my-title {
@@ -308,10 +363,6 @@ a:hover {
     text-align: center
   }
 
-  .aboutSection {
-    padding: 50px 20px !important;
-    margin-bottom: 100px !important
-  }
 
   .padding {
     padding: 0 20px
@@ -346,12 +397,12 @@ a:hover {
     left: 10px;
     color: #120d30;
     font-size: 30px;
-    cursor: pointer
+    
   }
 
   .top-buttonphone {
     position: absolute;
-    top: 55px;
+     top: 85px;
     right: 0;
     left: 0;
     background: #120d30;
@@ -368,7 +419,7 @@ a:hover {
     background: transparent;
     color: #fff;
     border: none;
-    padding: 35px 0
+    padding: 27px 0;
   }
 
   .top-buttonphone button:focus {
@@ -507,14 +558,12 @@ a:hover {
   .shap-4 {
     top: -100px !important;
     right: 0;
-    /* display: none; */
   }
   #phoneParsNave{
     display: none;
   }
 
   .shap-3 {
-    /* top: -200px !important; */
     display: block;
   }
 }
@@ -522,9 +571,10 @@ a:hover {
 
 /* dell */
 @media screen and (min-width: 1408px) {
-
+.container {
+    max-width: 62% !important;
+}
 .shap-4{
-  /* display: none; */
   top: 220px !important;
   right: 0;
 }
@@ -615,8 +665,7 @@ a:hover {
   }
 
   .hero-emage {
-    /* background-image: url(../img/logos/amr.png); */
-    margin-top: 80px !important;
+    margin-top: 111px !important;
     height: 400px !important;
     background-size: cover;
     background-position: center center;
@@ -625,7 +674,7 @@ a:hover {
 
   .shap-4 {
     position: absolute;
-    height: 900px !important;
+    height: 1000px !important;
     width: 1000px;
     top: 40px !important;
     right: 0;
@@ -635,8 +684,8 @@ a:hover {
   .shap-5 {
     display: inline-block !important;
     position: absolute;
-    height: 770px;
-    top: 80px;
+    height: 1400px !important;
+    top: -75px;
     right: 0;
     
   }
@@ -659,14 +708,14 @@ a:hover {
   padding: calc(0.375em - 1px) .75em calc(0.375em - 1px) .75em
 }
 
-.container {
+/* .container {
   flex-grow: 1;
   margin: 0 auto;
   position: relative;
   width: auto
-}
+} */
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   .container {
     max-width: 960px
   }
@@ -676,9 +725,9 @@ a:hover {
     margin-right: 32px;
     max-width: none
   }
-}
+} */
 
-@media screen and (max-width: 1215px) {
+/* @media screen and (max-width: 1215px) {
   .container.is-widescreen {
     max-width: 1152px
   }
@@ -686,7 +735,7 @@ a:hover {
 
 @media screen and (max-width: 1407px) {
   .container.is-fullhd {
-    max-width: 1344px
+    max-width: 1152px
   }
 }
 
@@ -698,9 +747,9 @@ a:hover {
 
 @media screen and (min-width: 1408px) {
   .container {
-    max-width: 1344px
+    max-width: 1152px
   }
-}
+} */
 
 .title sup,
 .subtitle sup {
@@ -747,16 +796,7 @@ print {
   justify-content: space-between
 }
 
-.hero.is-halfheight .hero-body,
-.hero.is-fullheight .hero-body,
-.hero.is-fullheight-with-navbar .hero-body {
-  align-items: center;
-  display: flex
-}
 
-.hero.is-fullheight {
-  min-height: 100vh
-}
 
 .hero-body {
   flex-grow: 1;
@@ -766,7 +806,7 @@ print {
 
 body,
 html {
-  max-width: 100vw;
+  /* max-width: 100vw; */
   overflow-x: hidden
 }
 
@@ -795,7 +835,7 @@ body {
 }
 
 .my-title {
-  font-size: 46px;
+  font-size: 37px !important;
   font-weight: 100;
   margin: 0;
   margin-bottom: 20px
@@ -828,7 +868,7 @@ body {
 .my-buttons {
   position: absolute;
   right: 0;
-  top: 20px;
+  top: 40px;
   z-index: 1
 }
 
@@ -880,7 +920,8 @@ body {
 }
 
 .shap-5 {
-  display: none
+  display: none;
+  
 }
 
 .tow-images img {
@@ -896,7 +937,8 @@ body {
 }
 
 .whatIOffer {
-  margin-bottom: 100px
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .whatIOfferCard {
@@ -910,6 +952,7 @@ body {
 }
 
 .aboutSection {
+  margin-top: 200px;
   background: #353b48;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
   padding: 50px
@@ -983,7 +1026,7 @@ body {
 .tapyalow .top-button button {
   width: 100%;
   display: block;
-  padding: 50px 0;
+  padding: 40px 0;
   background: transparent;
   font-size: 20px;
   outline: none;
@@ -1026,7 +1069,7 @@ body {
 .cards {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 35px;
+  /* padding: 0 35px; */
   width: 100%
 }
 
@@ -1038,11 +1081,20 @@ body {
 }
 
 .img {
+  padding: 0;
+  margin: -7px;
   height: 200px;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: 10px
+}
+.imgMyproject{
+  padding: 0;
+  margin: 0;
+  height: 200px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .frontend1 {
@@ -1139,7 +1191,7 @@ body {
   overflow: scroll;
   height: 609px;
   width: 290px;
-  padding-top: 25px;
+  padding-top: 40px;
   background: #fff;
   border-radius: 30px;
   cursor: -webkit-grab;

@@ -33,6 +33,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~plugins/ga.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -44,8 +45,15 @@ export default {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
+     ['@nuxtjs/pwa', { icon: false }],
+    '@nuxtjs/pwa',
     '@nuxtjs/bulma',
   ],
+  pwa: {
+  icon: {
+    // /* icon options */
+  }
+},
   /*
   ** Build configuration
   */
