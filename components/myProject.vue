@@ -24,7 +24,7 @@
           <div class="all">
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
-                <a class="is-size-5" :href="item.link" target="_blank">
+                <a class="is-size-5" :href="item.link" target="__blank">
                   <div
                     class="imgMyproject"
                     :style="{ backgroundImage: 'url(' + item.img_url + ')' }"
@@ -55,7 +55,7 @@
           <div class="all">
             <div class="cards">
               <div v-for="item in myProjects" :key="item.id" class="my-card">
-                <a :href="item.link" target="blank">
+                <a :href="item.link" target="_blank">
                   <div
                     class="imgMyproject"
                     :style="{ backgroundImage: 'url(' + item.img_url + ')' }"

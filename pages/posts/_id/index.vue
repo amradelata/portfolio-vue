@@ -69,7 +69,6 @@ export default {
   line-height: 1.1;
   margin-bottom: 50px;
 }
-
 .singelpost p {
   color: rgb(122, 122, 122);
   white-space: pre-line;
