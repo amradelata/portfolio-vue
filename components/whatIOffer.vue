@@ -44,6 +44,7 @@
           </div>
         </div>
       </div>
+      <!-- <img src="~/assets/img/herosvg/trengle.svg" class="trengle scale-in-center" /> -->
     </div>
   </section>
 </template>

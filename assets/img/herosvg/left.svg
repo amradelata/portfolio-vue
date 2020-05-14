@@ -1,8 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1031.492" height="1157.148" viewBox="0 0 1031.492 1157.148">
-  <g id="Group_91" data-name="Group 91" transform="translate(55.043 -114.715)">
-    <g id="Group_1" data-name="Group 1">
-      <path id="Path_418" data-name="Path 418" d="M-573.455-6036.04s87.418-1.219,152.079-21.959,124.716-188.4,292.8-228.144,298.586,46.341,346.485,97.6,69.541,157.382,81.741,211.063,19.6,208.574,98.821,265.963-15.521,388.471-25.62,406.675-96.881,109.588-251.378,143.775-341.773,21.906-427.994-7.236-197.2-45.565-263.628-151.208S-573.455-6036.04-573.455-6036.04Z" transform="translate(546.132 6411.717)" fill="#dfce9c" stroke="#ffe495" stroke-width="1" opacity="0.5"/>
-      <path id="Path_415" data-name="Path 415" d="M-574.971-6050.6s82.525-1.151,143.566-20.73,117.734-177.858,276.413-215.373S126.88-6242.96,172.1-6194.57s65.646,148.57,77.163,199.25,18.5,196.9,93.29,251.075S327.9-5377.52,318.367-5360.333,226.909-5256.88,81.06-5224.61s-322.641,20.68-404.036-6.831-186.165-43.015-248.871-142.743S-574.971-6050.6-574.971-6050.6Z" transform="translate(574.971 6444.07)" fill="#ffc108"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="407" height="333" viewBox="0 0 407 333">
+  <g id="Group_4" data-name="Group 4" transform="translate(-1066 -685)">
+    <g id="Group_3" data-name="Group 3" transform="translate(257 269)">
+      <g id="Group_1" data-name="Group 1" transform="translate(809 416)">
+        <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="106.5" cy="91" rx="106.5" ry="91" transform="translate(133)" fill="#ffdf82"/>
+        <ellipse id="Ellipse_2" data-name="Ellipse 2" cx="115.5" cy="111" rx="115.5" ry="111" transform="translate(176 48)" fill="#ffdf82"/>
+        <ellipse id="Ellipse_3" data-name="Ellipse 3" cx="115.5" cy="110.5" rx="115.5" ry="110.5" transform="translate(73 112)" fill="#ffdf82"/>
+        <ellipse id="Ellipse_4" data-name="Ellipse 4" cx="115.5" cy="111" rx="115.5" ry="111" fill="#ffdf82"/>
+      </g>
+    </g>
+    <g id="Group_2" data-name="Group 2" transform="translate(300 295.684)">
+      <g id="Group_1-2" data-name="Group 1" transform="translate(809 415.933)">
+        <ellipse id="Ellipse_1-2" data-name="Ellipse 1" cx="83.5" cy="71.5" rx="83.5" ry="71.5" transform="translate(106 0.383)" fill="#ffc108"/>
+        <ellipse id="Ellipse_2-2" data-name="Ellipse 2" cx="91.5" cy="87.5" rx="91.5" ry="87.5" transform="translate(139 38.383)" fill="#ffc108"/>
+        <ellipse id="Ellipse_3-2" data-name="Ellipse 3" cx="91.5" cy="88" rx="91.5" ry="88" transform="translate(57 87.383)" fill="#ffc108"/>
+        <ellipse id="Ellipse_4-2" data-name="Ellipse 4" cx="91.5" cy="87.5" rx="91.5" ry="87.5" transform="translate(0 0.383)" fill="#ffc108"/>
+      </g>
     </g>
   </g>
 </svg>

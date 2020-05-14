@@ -1,5 +1,5 @@
 <template>
-  <div id="myNav">
+  <div id="myNav ">
     <nav class="container">
       <nuxt-link to="/">
         <img src="~/assets/img/logos/logo_transparent.png" alt="logo" class="logo" />
@@ -26,7 +26,7 @@
       ref="phoneParsNave"
       @click="handler"
     ></i>
-    <a class="my-buttonsPhone" ref="my-buttonsPhone">
+    <a class="my-buttonsPhone scale-in-tr" ref="my-buttonsPhone">
       <nuxt-link to="/posts" class="button">My Blog</nuxt-link>
 
       <a
